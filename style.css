@@ -1,0 +1,2393 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   COLLEGE SURVIVAL CALCULATOR
+   PLAYFUL AUTUMN PALETTE
+========================================================= */
+
+:root {
+
+    /* Main neutrals */
+    --white: #FFFDF9;
+    --cream: #FAF7F0;
+    --camel: #D9C6A5;
+
+    /* Warm colours */
+    --chocolate: #5A3A2B;
+    --terracotta: #B5523C;
+    --burnt-orange: #E07A3F;
+    --mustard: #D4A94F;
+
+    /* Greens */
+    --sage: #7BA383;
+    --olive: #5E7D5B;
+
+    /* Cool accent */
+    --teal: #1E5A63;
+
+    /* Extra accents */
+    --blush: #E7B8A7;
+    --rosewood: #A0525B;
+    --aubergine: #4B2E42;
+
+}
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    margin: 0;
+
+    min-height: 100vh;
+
+    background: var(--white);
+
+    color: var(--chocolate);
+
+    font-family: "DM Sans", sans-serif;
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND SHAPES
+========================================================= */
+
+body::before,
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 45% 55% 60% 40%;
+
+    z-index: -1;
+
+    opacity: 0.75;
+}
+
+body::before {
+
+    top: 60px;
+    left: -35px;
+
+    background: var(--burnt-orange);
+
+    animation: floatCircleOne 8s ease-in-out infinite;
+}
+
+body::after {
+
+    right: -35px;
+    bottom: 50px;
+
+    background: var(--sage);
+
+    animation: floatCircleTwo 10s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   TYPOGRAPHY
+========================================================= */
+
+h1,
+h2,
+h3 {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+}
+
+h1 {
+
+    font-size: clamp(42px, 7vw, 72px);
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+    margin: 10px 0 25px;
+
+    color: var(--chocolate);
+}
+
+p {
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   COMMON PAGE
+========================================================= */
+
+.page-header {
+
+    margin-bottom: 40px;
+}
+
+.page-header h1 {
+
+    margin-bottom: 18px;
+}
+
+.page-header > p:last-child {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    color: var(--rosewood);
+}
+
+
+/* Small uppercase heading */
+
+.eyebrow {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    color: var(--terracotta);
+
+    margin: 0 0 10px;
+}
+
+
+/* =========================================================
+   HOME
+========================================================= */
+
+.container {
+
+    min-height: 100vh;
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 80px 25px 70px;
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.container h1 {
+
+    max-width: 800px;
+}
+
+.intro {
+
+    max-width: 600px;
+
+    font-size: 17px;
+
+    color: var(--rosewood);
+
+    margin: 0 auto 45px;
+}
+
+
+/* =========================================================
+   HOME BUTTON GRID
+========================================================= */
+
+.home-grid {
+
+    width: 100%;
+
+    max-width: 820px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+
+    margin: 10px auto 25px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL HOME CARDS
+========================================================= */
+
+.home-card {
+
+    border: 2px solid var(--chocolate);
+
+    border-radius: 22px;
+
+    padding: 28px 25px;
+
+    min-height: 175px;
+
+    color: white;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    box-shadow: 6px 6px 0 var(--chocolate);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* Individual colours */
+
+.home-card:nth-child(1) {
+
+    background: var(--burnt-orange);
+}
+
+.home-card:nth-child(2) {
+
+    background: var(--mustard);
+
+    color: var(--chocolate);
+}
+
+.home-card:nth-child(3) {
+
+    background: var(--sage);
+}
+
+.home-card:nth-child(4) {
+
+    background: var(--aubergine);
+}
+
+
+/* Decorative shine */
+
+.home-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.12);
+
+    right: -30px;
+    top: -30px;
+
+    transition: transform 0.3s ease;
+}
+
+.home-card:hover::after {
+
+    transform: scale(1.5);
+}
+
+
+.home-card:hover {
+
+    transform: translate(-4px, -4px);
+
+    box-shadow: 9px 9px 0 var(--chocolate);
+
+    filter: brightness(1.04);
+}
+
+.home-card:active {
+
+    transform: translate(2px, 2px);
+
+    box-shadow: 2px 2px 0 var(--chocolate);
+}
+
+
+.card-icon {
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.card-title {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+.card-subtitle {
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    opacity: 0.9;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   TINY NOTE
+========================================================= */
+
+.tiny-note {
+
+    font-size: 11px;
+
+    color: var(--olive);
+
+    margin-top: 5px;
+
+    animation: fadeUp 0.8s 0.9s ease both;
+
+    opacity: 0;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-button,
+.secondary-button {
+
+    border-radius: 12px;
+
+    padding: 14px 22px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.primary-button {
+
+    border: 2px solid var(--chocolate);
+
+    background: var(--terracotta);
+
+    color: white;
+
+    box-shadow: 4px 4px 0 var(--chocolate);
+
+    margin: 10px 5px;
+}
+
+.primary-button:hover {
+
+    background: var(--burnt-orange);
+
+    transform: translate(-2px, -2px);
+}
+
+.primary-button:active {
+
+    transform: translate(2px, 2px);
+
+    box-shadow: 1px 1px 0 var(--chocolate);
+}
+
+
+.secondary-button {
+
+    background: var(--white);
+
+    color: var(--chocolate);
+
+    border: 2px solid var(--chocolate);
+
+    margin: 10px 5px;
+}
+
+.secondary-button:hover {
+
+    background: var(--blush);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FAKE SYSTEM STATUS
+========================================================= */
+
+.system-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 8px;
+
+    padding: 7px 12px;
+
+    border: 1px solid var(--teal);
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    color: var(--teal);
+
+    background: var(--white);
+
+    animation: fadeUp 0.8s 0.78s ease both;
+
+    opacity: 0;
+}
+
+
+.status-dot {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--sage);
+
+    animation: statusPulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   QUIZ
+========================================================= */
+
+.quiz-container {
+
+    display: none;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 70px 20px 100px;
+
+    text-align: center;
+}
+
+
+.quiz-container .page-header {
+
+    margin-bottom: 50px;
+}
+
+
+/* Question cards */
+
+.question {
+
+    text-align: left;
+
+    background: var(--white);
+
+    border: 2px solid var(--blush);
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 4px 4px 0 var(--blush);
+}
+
+
+.question:nth-of-type(even) {
+
+    border-color: var(--camel);
+
+    box-shadow: 4px 4px 0 var(--camel);
+}
+
+
+.question h3 {
+
+    margin: 0 0 18px;
+
+    font-size: 20px;
+
+    line-height: 1.3;
+}
+
+
+/* Answer options */
+
+.question label {
+
+    display: block;
+
+    padding: 12px 14px;
+
+    margin: 8px 0;
+
+    border-radius: 10px;
+
+    background: var(--cream);
+
+    cursor: pointer;
+
+    transition: 0.15s ease;
+}
+
+
+.question label:hover {
+
+    background: var(--blush);
+
+    transform: translateX(3px);
+}
+
+
+.question input {
+
+    margin-right: 10px;
+
+    accent-color: var(--terracotta);
+}
+
+
+/* =========================================================
+   SURVIVAL DIAGNOSTIC SCAN
+========================================================= */
+
+.survival-scan {
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    max-width: 600px;
+
+    background: var(--teal);
+
+    color: var(--white);
+
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 7px 7px 0 var(--chocolate);
+}
+
+
+.scan-label {
+
+    margin: 0 0 12px;
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 2px;
+
+    color: var(--mustard);
+}
+
+
+#scan-message {
+
+    margin: 0 0 20px;
+
+    min-height: 24px;
+
+    font-size: 0.95rem;
+}
+
+
+.scan-bar {
+
+    width: 100%;
+
+    height: 12px;
+
+    background: rgba(255,255,255,0.18);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.scan-progress {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--mustard);
+
+    border-radius: 20px;
+
+    transition: width 0.25s ease;
+}
+
+
+.scan-percentage {
+
+    margin: 12px 0 0;
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-weight: 700;
+
+    font-size: 1.1rem;
+}
+
+
+.survival-scan:not(.hidden) {
+
+    animation: scanAppear 0.4s ease;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.result-container {
+
+    display: none;
+
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 80px 20px 100px;
+
+    text-align: center;
+}
+
+
+.result-container h1 {
+
+    font-size: clamp(36px, 6vw, 60px);
+}
+
+
+/* Score */
+
+.score {
+
+    width: 190px;
+    height: 190px;
+
+    border-radius: 50%;
+
+    margin: 35px auto;
+
+    background: var(--mustard);
+
+    border: 4px solid var(--chocolate);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow: 8px 8px 0 var(--chocolate);
+
+    animation: scoreAppear 0.7s ease;
+}
+
+
+#survival-score {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 48px;
+
+    font-weight: 700;
+}
+
+
+#score-message {
+
+    font-size: 18px;
+
+    color: var(--rosewood);
+
+    max-width: 600px;
+
+    margin: 0 auto 30px;
+}
+
+
+/* =========================================================
+   RESULT BOXES
+========================================================= */
+
+.result-box {
+
+    text-align: left;
+
+    background: var(--white);
+
+    border: 2px solid var(--chocolate);
+
+    border-radius: 15px;
+
+    padding: 22px;
+
+    margin: 15px 0;
+
+    box-shadow: 4px 4px 0 var(--camel);
+}
+
+
+.box-label {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    color: var(--terracotta);
+
+    margin-bottom: 8px;
+}
+
+
+.result-box p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   USELESS RESULT DIAGNOSTICS
+========================================================= */
+
+.system-diagnostics {
+
+    margin: 25px auto;
+
+    max-width: 600px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 12px;
+}
+
+
+.diagnostic-item {
+
+    padding: 15px 10px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    border: 2px solid var(--chocolate);
+}
+
+
+.diagnostic-item:nth-child(1) {
+
+    background: var(--blush);
+}
+
+
+.diagnostic-item:nth-child(2) {
+
+    background: var(--sage);
+}
+
+
+.diagnostic-item:nth-child(3) {
+
+    background: #B8D7DB;
+}
+
+
+.diagnostic-item span {
+
+    display: block;
+}
+
+
+.diagnostic-label {
+
+    font-size: 0.7rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: var(--chocolate);
+
+    opacity: 0.75;
+}
+
+
+.diagnostic-value {
+
+    margin-top: 5px;
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+
+    color: var(--chocolate);
+}
+
+
+/* =========================================================
+   ACADEMIC REACTION
+========================================================= */
+
+.reaction-box {
+
+    margin: 35px auto;
+
+    padding: 25px;
+
+    background: var(--olive);
+
+    border-radius: 18px;
+
+    color: white;
+
+    max-width: 500px;
+
+    border: 2px solid var(--chocolate);
+
+    box-shadow: 5px 5px 0 var(--chocolate);
+}
+
+
+#reaction-emoji {
+
+    font-size: 80px;
+
+    line-height: 1;
+
+    margin-bottom: 15px;
+}
+
+
+#reaction-caption {
+
+    margin: 0;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FORTUNE
+========================================================= */
+
+.fortune-container {
+
+    display: none;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 70px 20px 100px;
+
+    text-align: center;
+}
+
+
+.fortune-box {
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    padding: 45px 30px;
+
+    background: var(--white);
+
+    border: 2px solid var(--chocolate);
+
+    border-radius: 22px;
+
+    box-shadow: 7px 7px 0 var(--mustard);
+}
+
+
+/* Fortune machine label */
+
+.fortune-machine-label {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--terracotta);
+
+    margin-bottom: 15px;
+}
+
+
+/* Cosmic connection */
+
+.cosmic-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 11px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid var(--mustard);
+
+    border-radius: 30px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+
+    color: var(--chocolate);
+}
+
+
+.cosmic-status .status-dot {
+
+    background: var(--mustard);
+
+    animation: cosmicPulse 1.5s ease-in-out infinite;
+}
+
+
+/* Big cookie */
+
+.big-cookie {
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 115px;
+
+    cursor: pointer;
+
+    display: block;
+
+    margin: 0 auto 20px;
+
+    transition: transform 0.25s ease;
+
+    animation: cookieFloat 3s ease-in-out infinite;
+
+    filter: drop-shadow(
+        0 8px 5px rgba(90, 58, 43, 0.12)
+    );
+}
+
+
+.big-cookie:hover {
+
+    transform: rotate(-8deg) scale(1.08);
+}
+
+
+.big-cookie:active {
+
+    transform: rotate(8deg) scale(0.95);
+}
+
+
+.big-cookie.cracking {
+
+    animation: cookieCrack 0.65s ease;
+}
+
+
+#fortune-instruction {
+
+    color: var(--rosewood);
+
+    font-size: 15px;
+}
+
+
+/* Fortune loading */
+
+.fortune-loading {
+
+    margin: 20px auto;
+
+    color: var(--rosewood);
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.fortune-loading.hidden {
+
+    display: none;
+}
+
+
+.loading-dots {
+
+    display: inline-block;
+
+    width: 22px;
+
+    text-align: left;
+
+    animation: dots 1.2s infinite;
+}
+
+
+/* Fortune result */
+
+.fortune-result {
+
+    margin-top: 30px;
+
+    padding-top: 28px;
+
+    border-top: 1.5px dashed var(--camel);
+
+    animation: fortuneReveal 0.6s ease both;
+}
+
+
+.fortune-result.hidden {
+
+    display: none;
+}
+
+
+/* Fortune metadata */
+
+.fortune-meta {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 22px;
+}
+
+
+.fortune-meta span {
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: var(--blush);
+
+    color: var(--chocolate);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+#fortune-text {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: clamp(24px, 4vw, 31px);
+
+    line-height: 1.25;
+
+    margin: 18px auto 20px;
+
+    max-width: 550px;
+
+    color: var(--chocolate);
+}
+
+
+.fortune-label {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    font-weight: 700;
+
+    color: var(--terracotta);
+}
+
+
+.fortune-disclaimer {
+
+    max-width: 480px;
+
+    margin: 0 auto 20px;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    color: var(--olive);
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   MORAL SUPPORT
+========================================================= */
+
+.support-container {
+
+    display: none;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 70px 20px 100px;
+
+    text-align: center;
+}
+
+
+.support-box {
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    padding: 50px 30px;
+
+    background: var(--sage);
+
+    border-radius: 22px;
+
+    color: white;
+
+    border: 2px solid var(--chocolate);
+
+    box-shadow: 7px 7px 0 var(--chocolate);
+}
+
+
+#support-emoji {
+
+    font-size: 80px;
+
+    margin-bottom: 20px;
+}
+
+
+#support-text {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 28px;
+
+    line-height: 1.3;
+
+    max-width: 550px;
+
+    margin: 0 auto 25px;
+}
+
+
+/* =========================================================
+   PROCRASTINATION
+========================================================= */
+
+.procrastination-container {
+
+    display: none;
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 70px 20px 100px;
+
+    text-align: center;
+}
+
+
+.procrastination-box {
+
+    max-width: 650px;
+
+    margin: 0 auto 30px;
+
+    padding: 45px 30px;
+
+    background: var(--white);
+
+    border: 2px solid var(--aubergine);
+
+    border-radius: 22px;
+
+    box-shadow: 7px 7px 0 var(--aubergine);
+}
+
+
+.couch-icon {
+
+    font-size: 90px;
+
+    margin-bottom: 15px;
+}
+
+
+#excuse-text {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 27px;
+
+    line-height: 1.3;
+
+    max-width: 540px;
+
+    margin: 15px auto 25px;
+
+    color: var(--aubergine);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+
+/* Background */
+
+@keyframes floatCircleOne {
+
+    0%, 100% {
+
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+
+        transform: translate(18px, 25px) rotate(8deg);
+    }
+}
+
+
+@keyframes floatCircleTwo {
+
+    0%, 100% {
+
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+
+        transform: translate(-20px, -18px) rotate(-8deg);
+    }
+}
+
+
+/* General entrance */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(18px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* Homepage */
+
+.container .eyebrow {
+
+    animation: fadeUp 0.7s ease both;
+}
+
+
+.container h1 {
+
+    animation: fadeUp 0.8s 0.1s ease both;
+}
+
+
+.container .intro {
+
+    animation: fadeUp 0.8s 0.2s ease both;
+}
+
+
+/* Cards */
+
+.home-card {
+
+    opacity: 0;
+
+    animation: cardAppear 0.65s ease forwards;
+
+    will-change: transform;
+}
+
+
+.home-card:nth-child(1) {
+
+    animation-delay: 0.3s;
+}
+
+
+.home-card:nth-child(2) {
+
+    animation-delay: 0.42s;
+}
+
+
+.home-card:nth-child(3) {
+
+    animation-delay: 0.54s;
+}
+
+
+.home-card:nth-child(4) {
+
+    animation-delay: 0.66s;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* Card icons */
+
+.home-card:hover .card-icon {
+
+    animation: iconWiggle 0.45s ease;
+}
+
+
+@keyframes iconWiggle {
+
+    0% {
+        transform: rotate(0deg);
+    }
+
+    30% {
+        transform: rotate(-8deg);
+    }
+
+    60% {
+        transform: rotate(7deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+/* Status */
+
+@keyframes statusPulse {
+
+    0%, 100% {
+
+        opacity: 0.45;
+
+        transform: scale(0.85);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform: scale(1.15);
+    }
+}
+
+
+/* Scan */
+
+@keyframes scanAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* Score */
+
+@keyframes scoreAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.7);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+
+/* Cookie */
+
+@keyframes cookieFloat {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(2deg);
+    }
+}
+
+
+@keyframes cookieCrack {
+
+    0% {
+
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+
+    20% {
+
+        transform:
+            rotate(-8deg)
+            scale(1.08);
+    }
+
+    40% {
+
+        transform:
+            rotate(8deg)
+            scale(1.1);
+    }
+
+    60% {
+
+        transform:
+            rotate(-7deg)
+            scale(1.08);
+    }
+
+    80% {
+
+        transform:
+            rotate(6deg)
+            scale(1.04);
+    }
+
+    100% {
+
+        transform:
+            rotate(0deg)
+            scale(1);
+    }
+}
+
+
+/* Cosmic */
+
+@keyframes cosmicPulse {
+
+    0%, 100% {
+
+        opacity: 0.35;
+    }
+
+    50% {
+
+        opacity: 1;
+    }
+}
+
+
+/* Loading */
+
+@keyframes dots {
+
+    0% {
+
+        opacity: 0.2;
+    }
+
+    50% {
+
+        opacity: 1;
+    }
+
+    100% {
+
+        opacity: 0.2;
+    }
+}
+
+
+/* Fortune reveal */
+
+@keyframes fortuneReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px)
+            scale(0.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   HIDDEN UTILITY
+========================================================= */
+
+.hidden {
+
+    display: none !important;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    body::before,
+    body::after {
+
+        width: 85px;
+
+        height: 85px;
+    }
+
+
+    body::before {
+
+        left: -25px;
+
+        top: 60px;
+    }
+
+
+    body::after {
+
+        right: -20px;
+
+        bottom: 40px;
+    }
+
+
+    .container {
+
+        padding: 55px 18px;
+    }
+
+
+    h1 {
+
+        font-size: 44px;
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .intro {
+
+        font-size: 15px;
+    }
+
+
+    .home-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 17px;
+    }
+
+
+    .home-card {
+
+        min-height: 145px;
+
+        padding: 23px;
+    }
+
+
+    .card-title {
+
+        font-size: 22px;
+    }
+
+
+    .quiz-container,
+    .result-container,
+    .fortune-container,
+    .support-container,
+    .procrastination-container {
+
+        padding-left: 18px;
+
+        padding-right: 18px;
+    }
+
+
+    .fortune-box,
+    .support-box,
+    .procrastination-box {
+
+        padding: 35px 20px;
+    }
+
+
+    #fortune-text,
+    #support-text,
+    #excuse-text {
+
+        font-size: 23px;
+    }
+
+
+    .big-cookie {
+
+        font-size: 90px;
+    }
+
+
+    .system-diagnostics {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .fortune-machine-label {
+
+        font-size: 11px;
+    }
+
+
+    .fortune-meta {
+
+        gap: 5px;
+    }
+
+
+    .fortune-meta span {
+
+        font-size: 8px;
+    }
+
+}
+/* =========================================================
+   MORAL SUPPORT SYSTEM
+========================================================= */
+
+.support-system-label {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+    color: var(--white);
+}
+
+
+.support-status {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 6px 11px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,255,255,0.6);
+
+    border-radius: 30px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.support-status .status-dot {
+
+    background: var(--mustard);
+}
+
+
+#support-emoji {
+
+    font-size: 80px;
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+
+    animation: supportFloat 3s ease-in-out infinite;
+}
+
+
+.support-prompt {
+
+    margin: 0 auto 25px;
+
+    font-size: 15px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   SUPPORT METER
+========================================================= */
+
+.support-meter {
+
+    max-width: 450px;
+
+    margin: 0 auto 25px;
+
+    text-align: left;
+}
+
+
+.meter-label {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.meter-track {
+
+    width: 100%;
+
+    height: 10px;
+
+    background: rgba(255,255,255,0.2);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+.meter-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: var(--mustard);
+
+    border-radius: 20px;
+
+    transition: width 0.8s ease;
+}
+
+
+/* =========================================================
+   SUPPORT LOADING
+========================================================= */
+
+.support-loading {
+
+    margin: 20px auto;
+
+    min-height: 25px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.support-loading.hidden {
+
+    display: none;
+}
+
+
+/* =========================================================
+   SUPPORT MESSAGE
+========================================================= */
+
+.support-message {
+
+    margin: 25px auto;
+
+    padding: 20px;
+
+    max-width: 540px;
+
+    background: var(--white);
+
+    color: var(--chocolate);
+
+    border-radius: 15px;
+
+    border: 2px solid var(--chocolate);
+
+    box-shadow: 4px 4px 0 var(--chocolate);
+
+    animation: supportReveal 0.5s ease both;
+}
+
+
+.support-message.hidden {
+
+    display: none;
+}
+
+
+.support-message-label {
+
+    margin: 0 0 10px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--olive);
+}
+
+
+#support-text {
+
+    font-family: "Bricolage Grotesque", sans-serif;
+
+    font-size: 25px;
+
+    line-height: 1.3;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   SUPPORT ANIMATIONS
+========================================================= */
+
+@keyframes supportFloat {
+
+    0%, 100% {
+
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+
+        transform: translateY(-7px) rotate(2deg);
+    }
+}
+
+
+@keyframes supportReveal {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(0.97);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   MOBILE SUPPORT
+========================================================= */
+
+@media (max-width: 650px) {
+
+    #support-text {
+
+        font-size: 22px;
+    }
+
+    .support-system-label {
+
+        font-size: 11px;
+    }
+
+}
+/* =========================================
+   PROCRASTINATION MODE
+   ========================================= */
+
+.procrastination-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.procrastination-box {
+    background: var(--cream);
+    border: 2px solid var(--chocolate);
+    border-radius: 24px;
+    padding: 35px 30px;
+    margin-top: 35px;
+    box-shadow: 8px 8px 0 var(--chocolate);
+}
+
+.procrastination-system-label {
+    display: inline-block;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+    margin-bottom: 15px;
+}
+
+.procrastination-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 13px;
+    border-radius: 999px;
+    background: var(--camel);
+    color: var(--chocolate);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 25px;
+}
+
+.couch-icon {
+    font-size: 5rem;
+    margin: 15px 0;
+    animation: couchFloat 3s ease-in-out infinite;
+}
+
+@keyframes couchFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-2deg);
+    }
+}
+
+.procrastination-box .box-label {
+    margin-top: 5px;
+}
+
+#procrastination-prompt {
+    max-width: 560px;
+    margin: 10px auto 25px;
+    line-height: 1.6;
+}
+
+/* Meter */
+
+.procrastination-meter {
+    max-width: 600px;
+    margin: 25px auto;
+    text-align: left;
+}
+
+.meter-label {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 8px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--chocolate);
+}
+
+.meter-track {
+    width: 100%;
+    height: 14px;
+
+    background: var(--camel);
+    border: 2px solid var(--chocolate);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.meter-fill {
+    width: 0%;
+    height: 100%;
+
+    background: var(--burnt-orange);
+    border-radius: 999px;
+
+    transition: width 0.8s ease;
+}
+
+/* Loading */
+
+.procrastination-loading {
+    margin: 25px auto;
+    padding: 18px;
+
+    border: 1px dashed var(--terracotta);
+    border-radius: 14px;
+
+    color: var(--terracotta);
+    font-weight: 600;
+
+    animation: loadingPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes loadingPulse {
+    from {
+        opacity: 0.55;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Result */
+
+.excuse-result {
+    margin: 30px auto;
+    padding: 25px;
+
+    background: var(--camel);
+    border: 2px solid var(--chocolate);
+    border-radius: 18px;
+
+    animation: excuseReveal 0.5s ease-out;
+}
+
+@keyframes excuseReveal {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.excuse-label {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--terracotta);
+}
+
+#excuse-text {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1.35rem;
+    line-height: 1.4;
+    font-weight: 600;
+
+    max-width: 600px;
+    margin: 12px auto 25px;
+}
+
+/* Fake statistics */
+
+.excuse-analysis {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.excuse-analysis div {
+    padding: 15px 10px;
+
+    background: var(--cream);
+    border: 1px solid var(--chocolate);
+    border-radius: 12px;
+}
+
+.excuse-analysis span {
+    display: block;
+
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+
+    color: var(--chocolate);
+    opacity: 0.75;
+
+    margin-bottom: 5px;
+}
+
+.excuse-analysis strong {
+    display: block;
+
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 1rem;
+
+    color: var(--terracotta);
+}
+
+.excuse-footnote {
+    margin-top: 20px;
+
+    font-size: 0.75rem;
+    font-style: italic;
+
+    color: var(--chocolate);
+    opacity: 0.7;
+}
+
+/* Button behaviour */
+
+#excuse-button {
+    margin-top: 10px;
+}
+
+#worse-button {
+    margin-top: 12px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .procrastination-container {
+        padding: 50px 15px;
+    }
+
+    .procrastination-box {
+        padding: 25px 18px;
+        box-shadow: 5px 5px 0 var(--chocolate);
+    }
+
+    .couch-icon {
+        font-size: 4rem;
+    }
+
+    .excuse-analysis {
+        grid-template-columns: 1fr;
+    }
+
+    #excuse-text {
+        font-size: 1.15rem;
+    }
+
+}

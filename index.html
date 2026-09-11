@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>College Survival Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         HOME PAGE
+    ========================== -->
+
+    <main class="container" id="home">
+
+        <p class="eyebrow">ACADEMIC SURVIVAL SYSTEM</p>
+
+        <h1>College Survival<br>Calculator</h1>
+
+        <p class="intro">
+            A completely useless system for measuring how badly
+            you're doing at college.
+        </p>
+
+        <div class="home-grid">
+
+            <button class="home-card" onclick="showQuiz()">
+                <span class="card-icon">🎓</span>
+
+                <span class="card-title">
+                    College Survival
+                </span>
+
+                <span class="card-subtitle">
+                    Calculate your chances of making it through.
+                </span>
+            </button>
+
+
+            <button class="home-card" onclick="showFortune()">
+                <span class="card-icon">🥠</span>
+
+                <span class="card-title">
+                    Crack Your Fortune
+                </span>
+
+                <span class="card-subtitle">
+                    Discover what absolutely nobody predicted.
+                </span>
+            </button>
+
+
+            <button class="home-card" onclick="showMoralSupport()">
+                <span class="card-icon">🫡</span>
+
+                <span class="card-title">
+                    Moral Support
+                </span>
+
+                <span class="card-subtitle">
+                    You probably need this more than you think.
+                </span>
+            </button>
+
+
+            <button class="home-card" onclick="showProcrastination()">
+                <span class="card-icon">🛋️</span>
+
+                <span class="card-title">
+                    Procrastination Mode
+                </span>
+
+                <span class="card-subtitle">
+                    Find a completely valid reason to do nothing.
+                </span>
+            </button>
+
+        </div>
+
+        <div class="system-status">
+
+    <span class="status-dot"></span>
+
+    SYSTEM STATUS:
+    QUESTIONABLY OPERATIONAL
+
+</div>
+
+<p class="tiny-note">
+    *Results are scientifically questionable.
+</p>
+
+    </main>
+
+
+    <!-- =========================
+         SURVIVAL QUIZ
+    ========================== -->
+
+    <main class="quiz-container" id="quiz">
+
+        <div class="page-header">
+            <p class="eyebrow">SYSTEM CHECK</p>
+
+            <h1>College Survival Assessment</h1>
+
+            <p>
+                Answer honestly. Or don't. We cannot verify your answers anyway.
+            </p>
+        </div>
+
+
+        <!-- QUESTION 1 -->
+
+        <div class="question">
+            <h3>1. How many assignments are currently pending?</h3>
+
+            <label>
+                <input type="radio" name="assignments" value="3">
+                None. I am responsible.
+            </label>
+
+            <label>
+                <input type="radio" name="assignments" value="2">
+                One or two.
+            </label>
+
+            <label>
+                <input type="radio" name="assignments" value="1">
+                I stopped counting.
+            </label>
+
+            <label>
+                <input type="radio" name="assignments" value="0">
+                Pending? What is pending?
+            </label>
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question">
+            <h3>2. How do you prepare for exams?</h3>
+
+            <label>
+                <input type="radio" name="exam" value="3">
+                I start early.
+            </label>
+
+            <label>
+                <input type="radio" name="exam" value="2">
+                A few days before.
+            </label>
+
+            <label>
+                <input type="radio" name="exam" value="1">
+                The night before.
+            </label>
+
+            <label>
+                <input type="radio" name="exam" value="0">
+                I open the syllabus and hope.
+            </label>
+        </div>
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="question">
+            <h3>3. How much of the syllabus do you actually know?</h3>
+
+            <label>
+                <input type="radio" name="syllabus" value="3">
+                Almost everything.
+            </label>
+
+            <label>
+                <input type="radio" name="syllabus" value="2">
+                Most of it.
+            </label>
+
+            <label>
+                <input type="radio" name="syllabus" value="1">
+                Some suspicious portions.
+            </label>
+
+            <label>
+                <input type="radio" name="syllabus" value="0">
+                There is a syllabus?
+            </label>
+        </div>
+
+
+        <!-- QUESTION 4 -->
+
+        <div class="question">
+            <h3>4. How dependent are you on caffeine?</h3>
+
+            <label>
+                <input type="radio" name="coffee" value="3">
+                I don't need it.
+            </label>
+
+            <label>
+                <input type="radio" name="coffee" value="2">
+                Occasionally.
+            </label>
+
+            <label>
+                <input type="radio" name="coffee" value="1">
+                Every academic crisis.
+            </label>
+
+            <label>
+                <input type="radio" name="coffee" value="0">
+                Coffee is basically a personality trait.
+            </label>
+        </div>
+
+
+        <!-- QUESTION 5 -->
+
+        <div class="question">
+            <h3>5. How is your attendance?</h3>
+
+            <label>
+                <input type="radio" name="attendance" value="3">
+                Excellent.
+            </label>
+
+            <label>
+                <input type="radio" name="attendance" value="2">
+                Acceptable.
+            </label>
+
+            <label>
+                <input type="radio" name="attendance" value="1">
+                We don't talk about it.
+            </label>
+
+            <label>
+                <input type="radio" name="attendance" value="0">
+                Attendance is a future problem.
+            </label>
+        </div>
+
+
+        <!-- QUESTION 6 -->
+
+        <div class="question">
+            <h3>6. How often do you say "I'll do it tomorrow"?</h3>
+
+            <label>
+                <input type="radio" name="tomorrow" value="3">
+                Rarely.
+            </label>
+
+            <label>
+                <input type="radio" name="tomorrow" value="2">
+                Sometimes.
+            </label>
+
+            <label>
+                <input type="radio" name="tomorrow" value="1">
+                Frequently.
+            </label>
+
+            <label>
+                <input type="radio" name="tomorrow" value="0">
+                Tomorrow is my entire personality.
+            </label>
+        </div>
+
+
+        <!-- QUESTION 7 -->
+
+        <div class="question">
+            <h3>7. How much sleep do you usually get?</h3>
+
+            <label>
+                <input type="radio" name="sleep" value="3">
+                7–9 hours.
+            </label>
+
+            <label>
+                <input type="radio" name="sleep" value="2">
+                Around 6 hours.
+            </label>
+
+            <label>
+                <input type="radio" name="sleep" value="1">
+                Enough to function somehow.
+            </label>
+
+            <label>
+                <input type="radio" name="sleep" value="0">
+                Sleep is optional.
+            </label>
+        </div>
+
+
+        <!-- QUESTION 8 -->
+
+        <div class="question">
+            <h3>8. How much time do you spend scrolling?</h3>
+
+            <label>
+                <input type="radio" name="scrolling" value="3">
+                Very little.
+            </label>
+
+            <label>
+                <input type="radio" name="scrolling" value="2">
+                A normal amount.
+            </label>
+
+            <label>
+                <input type="radio" name="scrolling" value="1">
+                More than I should.
+            </label>
+
+            <label>
+                <input type="radio" name="scrolling" value="0">
+                I could probably write a thesis about it.
+            </label>
+        </div>
+
+
+        <!-- QUESTION 9 -->
+
+        <div class="question">
+            <h3>9. Do you take notes during class?</h3>
+
+            <label>
+                <input type="radio" name="notes" value="3">
+                Yes, properly.
+            </label>
+
+            <label>
+                <input type="radio" name="notes" value="2">
+                Sometimes.
+            </label>
+
+            <label>
+                <input type="radio" name="notes" value="1">
+                I borrow them later.
+            </label>
+
+            <label>
+                <input type="radio" name="notes" value="0">
+                My notes are mostly decorative.
+            </label>
+        </div>
+
+
+        <!-- QUESTION 10 -->
+
+        <div class="question">
+            <h3>10. Do you actually understand what you're studying?</h3>
+
+            <label>
+                <input type="radio" name="understanding" value="3">
+                Yes.
+            </label>
+
+            <label>
+                <input type="radio" name="understanding" value="2">
+                Usually.
+            </label>
+
+            <label>
+                <input type="radio" name="understanding" value="1">
+                I understand it during class.
+            </label>
+
+            <label>
+                <input type="radio" name="understanding" value="0">
+                Understanding is between me and God.
+            </label>
+        </div>
+
+
+      <!-- FAKE SYSTEM SCAN -->
+
+<div class="survival-scan hidden" id="survival-scan">
+
+    <p class="scan-label">
+        ✦ COLLEGE SURVIVAL DIAGNOSTIC ✦
+    </p>
+
+    <p id="scan-message">
+        Preparing unnecessarily advanced analysis...
+    </p>
+
+    <div class="scan-bar">
+        <div class="scan-progress" id="scan-progress"></div>
+    </div>
+
+    <p class="scan-percentage" id="scan-percentage">
+        0%
+    </p>
+
+</div>
+
+
+<button class="primary-button" onclick="calculateSurvival()">
+    Calculate My Survival Rate
+</button>
+
+        <button class="secondary-button" onclick="showHome()">
+            ← Back to Home
+        </button>
+
+    </main>
+
+
+    <!-- =========================
+         RESULT PAGE
+    ========================== -->
+
+    <main class="result-container" id="result">
+
+        <p class="eyebrow">SYSTEM VERDICT</p>
+
+        <h1 id="result-status">SURVIVAL STATUS</h1>
+
+        <div class="score">
+            <span id="survival-score">0%</span>
+        </div>
+
+        <p id="score-message"></p>
+        <div class="system-diagnostics">
+
+    <div class="diagnostic-item">
+        <span class="diagnostic-label">Academic Chaos</span>
+        <span class="diagnostic-value" id="chaos-value">--</span>
+    </div>
+
+    <div class="diagnostic-item">
+        <span class="diagnostic-label">Deadline Stability</span>
+        <span class="diagnostic-value" id="deadline-value">--</span>
+    </div>
+
+    <div class="diagnostic-item">
+        <span class="diagnostic-label">System Confidence</span>
+        <span class="diagnostic-value" id="confidence-value">--</span>
+    </div>
+
+</div>
+
+
+        <div class="result-box">
+            <p class="box-label">OFFICIAL ROAST</p>
+            <p id="roast"></p>
+        </div>
+
+
+        <div class="result-box">
+            <p class="box-label">SURVIVAL STRATEGY</p>
+            <p id="strategy"></p>
+        </div>
+
+
+        <div class="reaction-box">
+            <div id="reaction-emoji">😐</div>
+            <p id="reaction-caption"></p>
+        </div>
+
+
+        <button class="primary-button" onclick="restartQuiz()">
+            Try Again
+        </button>
+
+        <button class="secondary-button" onclick="showHome()">
+            ← Back to Home
+        </button>
+
+    </main>
+
+<!-- =========================
+     FORTUNE PAGE
+========================= -->
+
+<main class="fortune-container" id="fortune-page">
+
+    <div class="page-header">
+
+        <p class="eyebrow">UNNECESSARY COSMIC SERVICES</p>
+
+        <h1>Crack Your Fortune</h1>
+
+        <p>
+            The universe has absolutely no reason to tell you this.
+            But apparently it will.
+        </p>
+
+    </div>
+
+
+    <div class="fortune-box">
+
+        <div class="fortune-machine-label">
+            ✦ FORTUNE GENERATION DEVICE ✦
+        </div>
+
+
+        <div class="cosmic-status">
+
+            <span class="status-dot"></span>
+
+            COSMIC CONNECTION:
+            UNRELIABLE
+
+        </div>
+
+
+        <button
+            class="big-cookie"
+            id="fortune-cookie"
+            onclick="crackCookie()"
+        >
+            🥠
+        </button>
+
+
+        <p id="fortune-instruction">
+            Click the cookie.
+            It has been waiting for you.
+        </p>
+
+
+        <!-- Fake loading message -->
+
+        <div
+            class="fortune-loading hidden"
+            id="fortune-loading"
+        >
+            <span>Consulting the universe...</span>
+            <span class="loading-dots">...</span>
+        </div>
+
+
+        <!-- Fortune -->
+
+        <div
+            class="fortune-result hidden"
+            id="fortune-result"
+        >
+
+            <div class="fortune-meta">
+
+                <span id="fortune-category">
+                    GENERAL PROPHECY
+                </span>
+
+                <span id="fortune-confidence">
+                    COSMIC CONFIDENCE: 94%
+                </span>
+
+            </div>
+
+
+            <p class="fortune-label">
+                YOUR COMPLETELY ACCURATE FORTUNE
+            </p>
+
+
+            <p id="fortune-text"></p>
+
+
+            <p class="fortune-disclaimer">
+                *The universe accepts no responsibility for
+                the consequences of this information.
+            </p>
+
+
+            <button
+                class="primary-button"
+                onclick="crackCookie()"
+            >
+                🥠 Crack Another
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <button
+        class="secondary-button"
+        onclick="showHome()"
+    >
+        ← Back to Home
+    </button>
+
+</main>
+
+
+    <!-- =========================
+         MORAL SUPPORT PAGE
+    ========================== -->
+<!-- =========================
+     MORAL SUPPORT PAGE
+========================= -->
+
+<main class="support-container" id="support-page">
+
+    <div class="page-header">
+
+        <p class="eyebrow">EMOTIONAL TECHNICAL SUPPORT</p>
+
+        <h1>Moral Support</h1>
+
+        <p>
+            Because apparently nobody else is available right now.
+        </p>
+
+    </div>
+
+
+    <div class="support-box">
+
+        <div class="support-system-label">
+            ✦ EMERGENCY SUPPORT TERMINAL ✦
+        </div>
+
+
+        <div class="support-status">
+
+            <span class="status-dot"></span>
+
+            SUPPORT SYSTEM:
+            QUESTIONABLY ACTIVE
+
+        </div>
+
+
+        <div id="support-emoji">
+            🫡
+        </div>
+
+
+        <p class="support-prompt" id="support-prompt">
+            Please state the level of your academic crisis.
+        </p>
+
+
+        <!-- Support level -->
+
+        <div class="support-meter">
+
+            <div class="meter-label">
+
+                <span>ACADEMIC DISTRESS</span>
+
+                <span id="support-level">
+                    UNKNOWN
+                </span>
+
+            </div>
+
+
+            <div class="meter-track">
+
+                <div
+                    class="meter-fill"
+                    id="support-meter-fill"
+                ></div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Fake diagnostic -->
+
+        <div
+            class="support-loading hidden"
+            id="support-loading"
+        >
+
+            <span id="support-loading-text">
+                Detecting emotional damage...
+            </span>
+
+            <span class="loading-dots">
+                ...
+            </span>
+
+        </div>
+
+
+        <!-- Actual message -->
+
+        <div
+            class="support-message hidden"
+            id="support-message"
+        >
+
+            <p class="support-message-label">
+                OFFICIAL SYSTEM RESPONSE
+            </p>
+
+            <p id="support-text"></p>
+
+        </div>
+
+
+        <button
+            class="primary-button"
+            onclick="giveSupport()"
+        >
+            🫡 I Need Support
+        </button>
+
+    </div>
+
+
+    <button
+        class="secondary-button"
+        onclick="showHome()"
+    >
+        ← Back to Home
+    </button>
+
+</main>
+
+
+    <!-- =========================
+     PROCRASTINATION PAGE
+========================== -->
+
+<main class="procrastination-container" id="procrastination-page">
+
+    <div class="page-header">
+
+        <p class="eyebrow">
+            PRODUCTIVITY AVOIDANCE SYSTEM
+        </p>
+
+        <h1>
+            Procrastination Mode
+        </h1>
+
+        <p>
+            You were going to work.
+            Then this happened.
+        </p>
+
+    </div>
+
+
+    <div class="procrastination-box">
+
+        <div class="procrastination-system-label">
+            ✦ ADVANCED PROCRASTINATION ANALYSIS UNIT ✦
+        </div>
+
+
+        <div class="procrastination-status">
+
+            <span class="status-dot"></span>
+
+            PRODUCTIVITY:
+            CURRENTLY BEING AVOIDED
+
+        </div>
+
+
+        <div class="couch-icon" id="couch-icon">
+            🛋️
+        </div>
+
+
+        <p class="box-label">
+            PROCRASTINATION DIAGNOSTIC
+        </p>
+
+
+        <p id="procrastination-prompt">
+            Press the button to determine why you
+            absolutely cannot work right now.
+        </p>
+
+
+        <div class="procrastination-meter">
+
+            <div class="meter-label">
+
+                <span>
+                    PROCRASTINATION LEVEL
+                </span>
+
+                <span id="procrastination-level">
+                    UNKNOWN
+                </span>
+
+            </div>
+
+
+            <div class="meter-track">
+
+                <div
+                    class="meter-fill"
+                    id="procrastination-meter-fill">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="procrastination-loading hidden"
+            id="procrastination-loading">
+
+            <span id="procrastination-loading-text">
+                Preparing unnecessary analysis...
+            </span>
+
+            <span class="loading-dots">
+                ...
+            </span>
+
+        </div>
+
+
+        <div
+            class="excuse-result hidden"
+            id="excuse-result">
+
+            <p class="excuse-label">
+                OFFICIAL PROCRASTINATION EXCUSE
+            </p>
+
+
+            <p id="excuse-text"></p>
+
+
+            <div class="excuse-analysis">
+
+                <div>
+
+                    <span>
+                        EXCUSE QUALITY
+                    </span>
+
+                    <strong id="excuse-quality">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        PRODUCTIVITY LOSS
+                    </span>
+
+                    <strong id="productivity-loss">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        SCIENTIFIC VALIDITY
+                    </span>
+
+                    <strong id="scientific-validity">
+                        --
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <p
+                class="excuse-footnote"
+                id="excuse-footnote">
+            </p>
+
+        </div>
+
+
+        <button
+            class="primary-button"
+            id="excuse-button"
+            onclick="generateExcuse()">
+
+            🛋️ Find My Excuse
+
+        </button>
+
+
+        <button
+            class="secondary-button hidden"
+            id="worse-button"
+            onclick="makeItWorse()">
+
+            Make It Worse
+
+        </button>
+
+
+    </div>
+
+
+    <button
+        class="secondary-button"
+        onclick="showHome()">
+
+        ← Back to Home
+
+    </button>
+
+</main>
+<script src="script.js"></script>
+
+</body>
+</html>
